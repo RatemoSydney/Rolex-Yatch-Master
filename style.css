@@ -1,0 +1,176 @@
+:root{
+    --logo-color: #f3fe39;
+    --light-color: #f3fbfb;
+    --lite-color: #f9f9f9;
+    --dark-color: #16161a;
+    --extra-color:#8546f0;
+    --overlay: linear-gradient(#16161a41,#16161a94,#16161a);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100vw;
+    height: 100vh;
+    font-size: 16px;
+}
+body{
+    overflow: hidden;
+    position: relative;
+    background: var(--dark-color);
+    color: var(--light-color);
+}
+a{
+    text-decoration: none;
+}
+
+header{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    place-content: center;
+    background: linear-gradient(#ffffff00,#00000038);
+    backdrop-filter: blur(1em);
+}
+nav{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+nav a{
+    color: var(--lite-color);
+    position: relative;
+    padding: 15px 0;
+}
+nav a:hover{
+    color: var(--extra-color);
+}
+nav a::before{
+    content: " ";
+    width: 30%;
+    height: 3px;
+    border-radius: 24%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+nav :is(a:hover)::before{
+    background: var(--logo-color);
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo h1{
+    color: var(--logo-color);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+.logo img{
+    width: 50px;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+}
+
+main{
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+}
+
+.headers{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    place-items: center;
+}
+.headers :is(h1,h2){
+    letter-spacing: 1px;
+    padding: 15px 0;
+    text-shadow: 0 0 3px var(--dark-color);
+}
+.headers h1{
+    font-size: 2.5em;
+    font-weight: 400;
+}
+.headers h2{
+    font-size: 4em;
+    font-weight: 200;
+}
+
+.details{
+    width: 40%;
+    margin: auto;
+    position: absolute;
+    bottom: 10%;
+    left: 10px;
+    transform: translateY(-40%);
+    letter-spacing: 1px;
+    font-size: 1.05em;
+    text-align: center;
+}
+
+.box{
+    width: 90%;
+    height: 50vh;
+    margin: auto;
+    display: flex;
+    border-radius: 25px;
+}
+.box div{
+    width: 50%;
+    overflow: hidden;
+}
+.productbox img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+.description{
+    display: grid;
+    gap: 15px;
+    align-content: center;
+    padding-left: 10px;
+    background: var(--lite-color);
+    color: var(--dark-color);
+}
+
+
+.image-box{
+    position: absolute;
+    top: 5vh;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    filter: drop-shadow(0 0 0.5px var(--lite-color));
+}
+.image-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.overlay{
+    position: absolute;
+    z-index: -2;
+    width: 100vw;
+    height: 100vh;
+    background: var(--overlay);
+    mix-blend-mode: overlay;
+}
